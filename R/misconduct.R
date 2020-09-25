@@ -15,6 +15,7 @@
 #' @return A tibble with the database contents
 #' @examples 
 #' known <- get_misconduct(agree=TRUE)
+#' @export
 get_misconduct <- function(source="ASMD", agree=FALSE) {
 	if(!agree) {
 		stop("You must agree to the license for the use of the data before its use")
