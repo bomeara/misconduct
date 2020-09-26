@@ -4,12 +4,41 @@ Title: Compares names to databases of misconduct
 Version: 0.1.0
 Author: Brian C. O'Meara
 Maintainer: Brian C. O'Meara <omeara.brian@gmail.com>
-Description: Download information (currently just from the Academic Sexual Misconduct Database (Libarkin 2020)) to match against names extracted from other documents. This is to allow easy flagging of possible matches (for example, which current members of the National Academy of Sciences have been found guilty of misconduct).
-    However, there are some important caveats for its use. Name matches are uncertain: many people will have the same name, so even a perfect match might not be the same individual. There is also the opposite issue: some true matches might be missed ("Patricia Smith" in one document might not match "Patty Smith" in another). One can change the leniency to address the latter problem, though this will result in many more false matches. There also needs to be one or more humans involved in deciding how to act on any true matches -- for example, it may be illegal to exclude any true matches from a pool of job candidates. It is also worth considering the impact on past convictions: see information on the "ban the box" movement, for example. My motivation in developing this package is to help scientific societies identify bad actors who have harmed others in their organization and use a fair process to decide about possible ways to protect their members (banning individuals from attending conferences, for example) -- the package can be used for other things, many moral, but also some immoral. It is a potentially powerful tool, so use it humanely.  
+Description: Download information (currently just from the
+    Academic Sexual Misconduct Database (Libarkin 2020)) to match against
+    names extracted from other documents. This is to allow easy flagging
+    of possible matches (for example, which current members of the
+    National Academy of Sciences have been found guilty of misconduct).
+    However, there are some important caveats for its use. Name matches
+    are uncertain: many people will have the same name, so even a perfect
+    match might not be the same individual. There is also the opposite
+    issue: some true matches might be missed ("Patricia Smith" in one
+    document might not match "Patty Smith" in another). One can change the
+    leniency to address the latter problem, though this will result in
+    many more false matches. There also needs to be one or more humans
+    involved in deciding how to act on any true matches -- for example, it
+    may be illegal to exclude any true matches from a pool of job
+    candidates. It is also worth considering the impact on past
+    convictions: see information on the "ban the box" movement, for
+    example. My motivation in developing this package is to help
+    scientific societies identify bad actors who have harmed others in
+    their organization and use a fair process to decide about possible
+    ways to protect their members (banning individuals from attending
+    conferences, for example) -- the package can be used for other things,
+    many moral, but also some immoral. It is a potentially powerful tool,
+    so use it humanely.
 License: CC0
 Imports: 
     crul,
-    readxl
+    dplyr,
+    humaniformat,
+    NLP,
+    openNLP,
+    readxl,
+    rvest,
+    tibble,
+    utils,
+    xml2
 Suggests: 
     testthat
 Encoding: UTF-8
