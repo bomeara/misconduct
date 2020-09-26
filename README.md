@@ -23,7 +23,7 @@ library(misconduct)
 nasem <- extract_people(con="http://www.nasonline.org/member-directory/living-member-list.html")
 asmd <- get_misconduct(agree=TRUE)
 apparent_matches <- match_misconduct(nasem, asmd)
-print(apparent_matches[,c("Pool", "Person", "FirstNameMismatchFraction", "Specific Outcome")])
+print(apparent_matches[,c("Pool", "Person", "FirstNameMismatchFraction")])
 ```
 
-You will note in this example that some of the matches are not correct: first names can be very different and still have a match, but increasing stringency then misses people who go by a shortened version of their name in one of the databases. There may also be people who should match but who don't. This just shows the difficulties in name matching and the need for humans in the process. However, this does help compare hundreds of names in a pool of, say, meeting attendees with a pool of thousands of people who are in a misconduct database to flag potential issues ahead of time.
+You will note in this example that some of the matches are not correct: first names can be very different and still have a match, but increasing stringency then misses people who go by a shortened version of their name in one of the databases. There may also be people who should match but who don't. This just shows the difficulties in name matching and the need for humans in the process. However, this does help compare hundreds of names in a pool of, say, meeting attendees with a pool of over a thousand people who are in a misconduct database to flag potential issues ahead of time.
