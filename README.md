@@ -17,7 +17,8 @@ Anyone using the Academic Sexual Misconduct Database (for example, by using the 
 Libarkin, J. (2020). Academic Sexual Misconduct Database. Retrieved MONTH/DAY/YEAR, from https://academic-sexual-misconduct-database.org
 
 
-To use:
+## Usage
+
 
 ```
 devtools::install_github("bomeara/misconduct")
