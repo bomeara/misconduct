@@ -4,7 +4,7 @@
 \alias{extract_people}
 \title{Extract people's names from a file or website}
 \usage{
-extract_people(con = NULL, text = NULL, remove_odd = TRUE, ...)
+extract_people(con = NULL, text = NULL, ...)
 }
 \arguments{
 \item{con}{A connection object or a character string}

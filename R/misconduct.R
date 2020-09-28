@@ -45,7 +45,7 @@ get_misconduct <- function(source="ASMD", agree=FALSE) {
 #' @export
 #' @examples
 #' nasem <- extract_people(con="http://www.nasonline.org/member-directory/living-member-list.html")
-extract_people <- function(con=NULL, text=NULL, remove_odd=TRUE, ...) {
+extract_people <- function(con=NULL, text=NULL, ...) {
 	if(is.null(text)) {
 		info <- readLines(con, ...)
 	} else {
