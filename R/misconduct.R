@@ -46,14 +46,17 @@ get_misconduct <- function(source="ASMD", agree=FALSE) {
 #' @examples
 #' nasem <- extract_people(con="http://www.nasonline.org/member-directory/living-member-list.html")
 extract_people <- function(con=NULL, text=NULL, ...) {
+	features <- NULL
 	if(is.null(text)) {
 		info <- readLines(con, ...)
+		info <- paste(info, collapse = ", ")
+		info <- gsub("\n", ", ", info)
+		info <- rvest::html_text(xml2::read_html(info))
+
 	} else {
 		info <- text
 	}
-	info <- paste(info, collapse = ", ")
-	info <- gsub("\n", ", ", info)
-	info <- rvest::html_text(xml2::read_html(info))
+
 	info <- NLP::as.String(info)
 	sent_ann <- openNLP::Maxent_Sent_Token_Annotator()
 	word_ann <- openNLP::Maxent_Word_Token_Annotator()
@@ -109,6 +112,7 @@ format_people <- function(people, remove_odd=FALSE) {
 #' @export 
 #' @return A tibble that has the rows of misconduct_db who may match the people in the pool along with the people in the pool who might match and the fraction of letters in their first names that don't match(the first two columns, Pool and FirstNameMismatchFraction)
 match_misconduct <- function(pool, misconduct_db, remove_odd_pool=TRUE, fraction_firstname_mismatch_allowed=0.7) {
+	Person <- FirstNameMismatchFraction <- Pool <- NULL
 	pool_names <- format_people(pool, remove_odd=remove_odd_pool)
 	misconduct_names <- format_people(misconduct_db$Person)
 	#potential_matches <- rep(NA, nrow(pool_names))

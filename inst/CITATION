@@ -3,7 +3,7 @@ citHeader("To cite misconduct in publications use:")
 citEntry(
   entry    = "Website",
   title    = "Academic Sexual Misconduct Database",
-  author   = "Libarkin, Julie,
+  author   = "Libarkin, Julie",
   journal  = ,
   year     = 2020,
   volume   = ,
@@ -14,3 +14,4 @@ citEntry(
 "Libarkin, J. (2020). Academic Sexual Misconduct Database. Retrieved MONTH/DAY/YEAR, from https://academic-sexual-misconduct-database.org"
   )
 )
+

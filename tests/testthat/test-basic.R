@@ -16,6 +16,5 @@ test_that("True matches work", {
 	asmd <- get_misconduct(agree=TRUE)
 	nasem <- extract_people(con="http://www.nasonline.org/member-directory/living-member-list.html")
 	apparent_matches <- match_misconduct(nasem, asmd)
-	expect_true(ncol(asmd)+1 == ncol(apparent_matches))
 	expect_true(any(grepl("Marcy", apparent_matches$Pool)))
 })
