@@ -1,15 +1,12 @@
-citHeader("To cite misconduct in publications use:")
-
 citEntry(
-  entry    = "Website",
+  entry    = "Misc",
   title    = "Academic Sexual Misconduct Database",
   author   = "Libarkin, Julie",
-  journal  = ,
-  year     = 2020,
-  volume   = ,
-  number   = ,
-  pages    = ,
+  year     = 2021,
   url      = "https://academic-sexual-misconduct-database.org",
+  header = "To cite misconduct's source database in publications use:",
+  footer = "",
+  key = "ASMD",
   textVersion = paste(
 "Libarkin, J. (2020). Academic Sexual Misconduct Database. Retrieved MONTH/DAY/YEAR, from https://academic-sexual-misconduct-database.org"
   )

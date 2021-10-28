@@ -23,5 +23,9 @@ This uses natural language processing to find all potential human names in a web
 This can use either a URL or file (entered by the con argument) or a vector of text (text). If text is not NULL, it will use the text; otherwise it will use con.
 }
 \examples{
-nasem <- extract_people(con="http://www.nasonline.org/member-directory/living-member-list.html")
+# We are using an archived version of the page for reproducibility;
+# in most uses, you will want to use the current version of the page
+url <- paste0("https://web.archive.org/web/20200819142546/",
+"http://www.nasonline.org/member-directory/living-member-list.html")
+nasem <- extract_people(con=url)
 }

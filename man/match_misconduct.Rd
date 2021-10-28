@@ -32,7 +32,11 @@ The fraction_firstname_mismatch_allowed goes from 0 to 1; if 0, every letter in 
 If the pool of names comes from, say, natural language processing of a website, there may be incorrect names included. remove_odd_pool=TRUE will remove these from the pool ("people" with no first name, no last name, or a period in their last name). If you know this isn't an issue, then set this to FALSE
 }
 \examples{
-nasem <- extract_people(con="http://www.nasonline.org/member-directory/living-member-list.html")
+# We are using an archived version of the page for reproducibility;
+# in most uses, you will want to use the current version of the page
+url <- paste0("https://web.archive.org/web/20200819142546/",
+"http://www.nasonline.org/member-directory/living-member-list.html")
+nasem <- extract_people(con=url)
 asmd <- get_misconduct(agree=TRUE)
 apparent_matches <- match_misconduct(nasem, asmd)
 print(apparent_matches[,c("Pool", "Person", "FirstNameMismatchFraction", "Specific Outcome")])

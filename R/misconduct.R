@@ -44,7 +44,11 @@ get_misconduct <- function(source="ASMD", agree=FALSE) {
 #' @return A vector of people's names
 #' @export
 #' @examples
-#' nasem <- extract_people(con="http://www.nasonline.org/member-directory/living-member-list.html")
+#' # We are using an archived version of the page for reproducibility;
+#' # in most uses, you will want to use the current version of the page
+#' url <- paste0("https://web.archive.org/web/20200819142546/",
+#' "http://www.nasonline.org/member-directory/living-member-list.html")
+#' nasem <- extract_people(con=url)
 extract_people <- function(con=NULL, text=NULL, ...) {
 	features <- NULL
 	if(is.null(text)) {
@@ -105,7 +109,11 @@ format_people <- function(people, remove_odd=FALSE) {
 #' @param remove_odd_pool If TRUE, delete names that might have been errors: NA, "A.", etc.
 #' @param fraction_firstname_mismatch_allowed What fraction of letters can be different between the first names to count as a match
 #' @examples 
-#' nasem <- extract_people(con="http://www.nasonline.org/member-directory/living-member-list.html")
+#' # We are using an archived version of the page for reproducibility;
+#' # in most uses, you will want to use the current version of the page
+#' url <- paste0("https://web.archive.org/web/20200819142546/",
+#' "http://www.nasonline.org/member-directory/living-member-list.html")
+#' nasem <- extract_people(con=url)
 #' asmd <- get_misconduct(agree=TRUE)
 #' apparent_matches <- match_misconduct(nasem, asmd)
 #' print(apparent_matches[,c("Pool", "Person", "FirstNameMismatchFraction", "Specific Outcome")])
